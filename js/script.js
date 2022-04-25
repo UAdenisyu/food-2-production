@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", e => {
     function slider(wrapper, field, slide, menuWrapper, bindingItems, sliderDescription){
 
         const d = document;
@@ -16,20 +16,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
             sliderWrapper = d.querySelector(wrapper),
             sliderField = d.querySelector(field),
             width = window.getComputedStyle(sliderWrapper).width;
-    
-            slideIndex = 0;
+
+            slideIndex = 0; 
             offset = 0; 
-    
-            sliderField.style.width = 100 * sliderSlides.length + '%';
-    
+            
+            sliderField.style.width = 100 * sliderSlides.length+'%';
+            
+            console.log(sliderSlides);
             sliderSlides.forEach((slide) => {
-                slide.style.width = width; 
+                slide.style.width = width;
             });
         }
     
         setAdaptiveSettings();
     
-        const totalSlideAmount = sliderSlides.length;
     
         sliderField.style.display = 'flex';
         sliderField.style.transition = '1s all';
